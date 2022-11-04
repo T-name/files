@@ -9,12 +9,11 @@ proxies:
     - {type: trojan, name: 'trojan-go1', server: 'trojan-go1.t-name.buzz', port: 443, password: 'song7724',skip-cert-verify: true}
     - {type: trojan, name: 'trojan-go2', server: 'trojan-go2.t-name.buzz', port: 7723, password: 'song7724',skip-cert-verify: true}
     - {type: trojan, name: 'trojan-go3', server: 'trojan-go3.t-name.buzz', port: 443, password: 'song7724',skip-cert-verify: false}
-    - { type: vmess, name: 电信定向, server: 'xray3.t-name.buzz', port: 80, uuid: b831381d-6324-4d53-ad4f-8cda48b30811, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, network: http, http-opts: {method: GET, path: [/], headers: {Host: [t7z.cupid.iqiyi.com]}}, udp: true}
 
    
 proxy-groups:
-    - {name: Proxy, type: select, proxies: [自动选择, 'trojan-go1','trojan-go2','trojan-go3','电信定向']}
-    - {name: 自动选择, type: url-test, proxies: ['trojan-go1','trojan-go2','trojan-go3','电信定向'], url: 'http://www.gstatic.com/generate_204', interval: 300}
+    - {name: Proxy, type: select, proxies: [自动选择, 'trojan-go1','trojan-go2','trojan-go3']}
+    - {name: 自动选择, type: url-test, proxies: ['trojan-go1','trojan-go2','trojan-go3'], url: 'http://www.gstatic.com/generate_204', interval: 300}
 rules:
     - 'DOMAIN-SUFFIX,mzstatic.com,DIRECT'
     - 'DOMAIN-SUFFIX,akadns.net,DIRECT'
